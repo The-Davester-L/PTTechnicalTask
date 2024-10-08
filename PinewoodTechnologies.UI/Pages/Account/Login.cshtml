@@ -1,0 +1,40 @@
+﻿@page
+@model PinewoodTechnologies.UI.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="alert alert-info" role="alert">
+    The username and password are stored in the appsettings.json for demo purpose. In PRODUCTION you would use OAuth/JWT/user database authentication.
+
+    The credential is <strong>@Model._configuration["Credentials:Username"] / @Model._configuration["Credentials:Password"]</strong>
+
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <form method="post" class="card p-4 shadow">
+            <div class="mb-3">
+                <label asp-for="Username" class="form-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            @if (Model.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">@Model.ErrorMessage</div>
+            }
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

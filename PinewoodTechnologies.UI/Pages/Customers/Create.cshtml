@@ -1,0 +1,70 @@
+﻿@page
+@model PinewoodTechnologies.UI.Pages.Customers.CreateModel
+@{
+    ViewData["Title"] = "Create Customer";
+}
+
+<h2>Create Customer</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post" class="card p-4 shadow">
+
+    <div class="form-group">
+        <label asp-for="Customer.FirstName" class="control-label"></label>
+        <input asp-for="Customer.FirstName" class="form-control" />
+        <span asp-validation-for="Customer.FirstName" class="text-danger"></span>
+    </div>
+    <!-- Repeat for other fields -->
+    <!-- Last Name -->
+    <div class="form-group">
+        <label asp-for="Customer.LastName" class="control-label"></label>
+        <input asp-for="Customer.LastName" class="form-control" />
+        <span asp-validation-for="Customer.LastName" class="text-danger"></span>
+    </div>
+    <!-- Date of Birth -->
+    <div class="form-group">
+        <label asp-for="Customer.DoB" class="control-label"></label>
+        <input asp-for="Customer.DoB" class="form-control" />
+        <span asp-validation-for="Customer.DoB" class="text-danger"></span>
+    </div>
+    <!-- Address Line 1 -->
+    <div class="form-group">
+        <label asp-for="Customer.AddressLine1" class="control-label"></label>
+        <input asp-for="Customer.AddressLine1" class="form-control" />
+        <span asp-validation-for="Customer.AddressLine1" class="text-danger"></span>
+    </div>
+    <!-- Address Line 2 -->
+    <div class="form-group">
+        <label asp-for="Customer.AddressLine2" class="control-label"></label>
+        <input asp-for="Customer.AddressLine2" class="form-control" />
+        <span asp-validation-for="Customer.AddressLine2" class="text-danger"></span>
+    </div>
+    <!-- Address Line 3 -->
+    <div class="form-group">
+        <label asp-for="Customer.AddressLine3" class="control-label"></label>
+        <input asp-for="Customer.AddressLine3" class="form-control" />
+        <span asp-validation-for="Customer.AddressLine3" class="text-danger"></span>
+    </div>
+    <!-- Postcode -->
+    <div class="form-group">
+        <label asp-for="Customer.Postcode" class="control-label"></label>
+        <input asp-for="Customer.Postcode" class="form-control" />
+        <span asp-validation-for="Customer.Postcode" class="text-danger"></span>
+    </div>
+    <!-- Telephone Number -->
+    <div class="form-group">
+        <label asp-for="Customer.TelephoneNumber" class="control-label"></label>
+        <input asp-for="Customer.TelephoneNumber" class="form-control" />
+        <span asp-validation-for="Customer.TelephoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

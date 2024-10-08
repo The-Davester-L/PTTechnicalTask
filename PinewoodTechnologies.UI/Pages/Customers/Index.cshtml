@@ -1,0 +1,38 @@
+﻿@page
+@model PinewoodTechnologies.UI.Pages.Customers.IndexModel
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<h2>Customers</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New Customer</a>
+</p>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Customers[0].FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.Customers[0].LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.Customers[0].TelephoneNumber)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr>
+                <td>@customer.FirstName</td>
+                <td>@customer.LastName</td>
+                <td>@customer.TelephoneNumber</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@customer.Id" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@customer.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
